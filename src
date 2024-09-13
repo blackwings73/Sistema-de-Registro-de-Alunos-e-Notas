@@ -1,0 +1,59 @@
+# Sistema de Gerenciamento Escolar
+
+Este repositório contém o esquema de banco de dados para um sistema de gerenciamento escolar. O banco de dados é projetado para gerenciar informações sobre alunos, cursos e notas.
+
+## Estrutura do Banco de Dados
+
+O banco de dados possui as seguintes tabelas:
+
+- **Alunos**
+  - `id_aluno` (INT, PK, AUTO_INCREMENT): Identificador único do aluno.
+  - `nome` (VARCHAR(100)): Nome completo do aluno.
+  - `data_nascimento` (DATE): Data de nascimento do aluno.
+  - `endereco` (VARCHAR(255)): Endereço do aluno.
+
+- **Cursos**
+  - `id_curso` (INT, PK, AUTO_INCREMENT): Identificador único do curso.
+  - `nome_curso` (VARCHAR(100)): Nome do curso.
+  - `descricao` (TEXT): Descrição do curso.
+
+- **Notas**
+  - `id_nota` (INT, PK, AUTO_INCREMENT): Identificador único da nota.
+  - `id_aluno` (INT, FK): Referência ao aluno que recebeu a nota.
+  - `id_curso` (INT, FK): Referência ao curso em que a nota foi dada.
+  - `nota` (DECIMAL(5,2)): Nota obtida pelo aluno no curso.
+
+## Scripts SQL
+
+Os scripts SQL no repositório realizam as seguintes operações:
+
+1. **Criação do Banco de Dados e Tabelas**:
+   - Cria o banco de dados `Escola` e as tabelas `Alunos`, `Cursos`, e `Notas`.
+
+2. **Inserção de Dados**:
+   - Adiciona alunos, cursos e notas iniciais.
+
+3. **Consultas**:
+   - Lista todos os alunos juntamente com as notas que eles obtiveram em cada curso.
+   - Calcula a média das notas para cada curso.
+   - Encontra o aluno com a maior nota em cada curso.
+
+4. **Atualização e Exclusão**:
+   - Atualiza a nota de um aluno em um curso específico.
+   - Modifica o endereço de um aluno.
+   - Exclui um aluno e todas as suas notas associadas.
+   - Remove um curso e todas as notas associadas a esse curso.
+
+## Uso
+
+1. Clone este repositório.
+2. Execute os scripts SQL fornecidos em seu banco de dados MySQL para criar o esquema e inserir dados.
+3. Utilize as consultas SQL fornecidas para interagir com o banco de dados e gerar relatórios.
+
+## Contribuições
+
+Se você deseja contribuir para este projeto, por favor, faça um fork do repositório e envie um pull request com suas alterações.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
